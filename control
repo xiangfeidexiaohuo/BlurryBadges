@@ -1,12 +1,11 @@
-Name: BlurryBadges (iOS 14+)
-Package: com.ps.blurrybadges
-Conflicts: org.thebigboss.blurrybadges, com.spicat.blurrybadges
+Name: BlurryBadges 中文版(rootless)
+Package: com.dao.blurrybadges
+Conflicts: org.thebigboss.blurrybadges, com.spicat.blurrybadges, com.ps.blurrybadges, com.hk.rootless.blurrybadges
 Author: PoomSmart
 Maintainer: PoomSmart
 Depends: firmware (>= 14.0), mobilesubstrate, preferenceloader
-Section: Tweaks
-Version: 1.0.0
+Section: 嗨-工具
+Version: 1.5.2.1
 Architecture: iphoneos-arm
-Description: Colored blur for SpringBoard icon badges.
-Depiction: https://poomsmart.github.io/repo/depictions/blurrybadges.html
-SileoDepiction: https://poomsmart.github.io/repo/sileodepictions/blurrybadges.json
+Description: 自定义程序通知角标的边框颜色和透明度，基于PoomSmart的开源直接编译汉化。
+

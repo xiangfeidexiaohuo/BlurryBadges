@@ -1,11 +1,11 @@
-PACKAGE_VERSION = 1.5.2
+PACKAGE_VERSION = 1.5.2.1
 INSTALL_TARGET_PROCESSES = SpringBoard
 
 ifeq ($(SIMULATOR),1)
 	TARGET = simulator:clang:latest:8.0
 	ARCHS = x86_64
 else
-	TARGET = iphone:clang:15.6:14.0
+	TARGET = iphone:clang:latest:14.0
 endif
 
 include $(THEOS)/makefiles/common.mk

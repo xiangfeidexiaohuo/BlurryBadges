@@ -29,11 +29,11 @@ static int integerValueForKey(CFStringRef key, int defaultValue) {
 @implementation BackdropBadgePrefController
 
 - (NSArray *)borderSizes {
-    return @[@"No Border", @"Little", @"Medium", @"Pre-iOS 7", @"Huge"];
+    return @[@"无", @"小", @"中", @"iOS7风格", @"大"];
 }
 
 - (NSArray *)borderColors {
-    return @[@"Lighter", @"Darker", @"White", @"Black", @"Random"];
+    return @[@"浅色", @"深色", @"白色", @"黑色", @"随机"];
 }
 
 - (NSArray *)opacitys {
@@ -43,7 +43,7 @@ static int integerValueForKey(CFStringRef key, int defaultValue) {
 - (NSMutableArray *)specifiers {
     if (!_specifiers) {
         _specifiers = [NSMutableArray new];
-        PSSpecifier *borderSizeGroupSpecifier = [PSSpecifier preferenceSpecifierNamed:@"Border Size" target:nil set:nil get:nil detail:nil cell:PSGroupCell edit:nil];
+        PSSpecifier *borderSizeGroupSpecifier = [PSSpecifier preferenceSpecifierNamed:@"边框尺寸" target:nil set:nil get:nil detail:nil cell:PSGroupCell edit:nil];
         [_specifiers addObject:borderSizeGroupSpecifier];
         for (NSString *borderSize in [self borderSizes]) {
             PSSpecifier *borderSizeSpecifier = [PSSpecifier preferenceSpecifierNamed:borderSize target:nil set:nil get:nil detail:nil cell:PSStaticTextCell edit:nil];
@@ -51,7 +51,7 @@ static int integerValueForKey(CFStringRef key, int defaultValue) {
             [borderSizeSpecifier setProperty:@YES forKey:@"enabled"];
             [_specifiers addObject:borderSizeSpecifier];
         }
-        PSSpecifier *borderColorGroupSpecifier = [PSSpecifier preferenceSpecifierNamed:@"Border Color" target:nil set:nil get:nil detail:nil cell:PSGroupCell edit:nil];
+        PSSpecifier *borderColorGroupSpecifier = [PSSpecifier preferenceSpecifierNamed:@"边框颜色" target:nil set:nil get:nil detail:nil cell:PSGroupCell edit:nil];
         [_specifiers addObject:borderColorGroupSpecifier];
         for (NSString *borderColor in [self borderColors]) {
             PSSpecifier *borderColorSpecifier = [PSSpecifier preferenceSpecifierNamed:borderColor target:nil set:nil get:nil detail:nil cell:PSStaticTextCell edit:nil];
@@ -60,7 +60,7 @@ static int integerValueForKey(CFStringRef key, int defaultValue) {
             [_specifiers addObject:borderColorSpecifier];
         }
 
-        PSSpecifier *badgeTintOpacitySpecifier = [PSSpecifier preferenceSpecifierNamed:@"Badge Tint Opacity" target:nil set:nil get:nil detail:nil cell:PSGroupCell edit:nil];
+        PSSpecifier *badgeTintOpacitySpecifier = [PSSpecifier preferenceSpecifierNamed:@"边框色调的不透明度" target:nil set:nil get:nil detail:nil cell:PSGroupCell edit:nil];
         [_specifiers addObject:badgeTintOpacitySpecifier];
         for (NSString *opacity in [self opacitys]) {
             PSSpecifier *opacitySpecifier = [PSSpecifier preferenceSpecifierNamed:opacity target:nil set:nil get:nil detail:nil cell:PSStaticTextCell edit:nil];
@@ -70,7 +70,7 @@ static int integerValueForKey(CFStringRef key, int defaultValue) {
         }
 
         PSSpecifier *footerSpecifier = [PSSpecifier emptyGroupSpecifier];
-        [footerSpecifier setProperty:@"© 2013 - 2017, 2021 - 2024 PoomSmart" forKey:@"footerText"];
+        [footerSpecifier setProperty:@"© 2013~2017, 2021~2024 PoomSmart\n🇨🇳刀刀源" forKey:@"footerText"];
         [footerSpecifier setProperty:@1 forKey:@"footerAlignment"];
         [_specifiers addObject:footerSpecifier];
     }
